@@ -1,11 +1,17 @@
 miniBookmarklet
 ==
 
-A bookmarklet editor in ...b of HTML/JS
+A bookmarklet editor in 80b of HTML/JS
 
-1- Enter JS code in the textarea 
-2- Drag and drop the link to your bookmarks
-3- Done.
+````html
+<p><a id=a>BM<p><textarea oninput=a.href='javascript:(function(){'+value+'})()'>
+````
+
+How to use:
+
+- Enter JS code in the textarea 
+- Drag and drop the BM link to your bookmarks
+- Done.
 
 
 Demo: http://xem.github.io/miniBookmarklet
