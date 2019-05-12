@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset=utf-8>
+<style>
+body {width:800px;margin:auto;display:block;font-family:arial;text-align:center}
+pre {background:#def;white-space:pre-wrap;text-align:left;word-break: break-all;padding:10px;}
+</style>
+<font face=arial>
+<h2>MiniBookmarklets</h2>
+<br>
+<hr>
+<br>
+<h3>Paste my email</h3>
+<p>This script types your email (or any text you often need to type) in the currently focused element.
+<pre id=pasteEmail>javascript:(function(d){d=document.activeElement;if(d.tagName=="INPUT"||d.tagName=="TEXTAREA"||d.contentEditable=="true"){d.value=d.innerHTML="JOHN@DOE.COM"}})()</pre>
+<br>
+<input id=email value="JOHN@DOE.COM" oninput="pasteEmailBM.href=pasteEmail.innerText.replace('JOHN@DOE.COM',value)"> =>
+<a id=pasteEmailBM href='javascript:(function(d){d=document.activeElement;if(d.tagName=="INPUT"||d.tagName=="TEXTAREA"||d.contentEditable=="true"){d.value=d.innerHTML="JOHN@DOE.COM"}})()'>My email</a> (Drag it to your bookmarks)
+<br>
+<br>
+<hr>
+<br>
+<h3>Emoji keyboard</h3>
+<p>This script displays a popup containing all the (Twitter) emoji, ready to copy-paste.
+<br>
+<br>
+Text only
+<pre>javascript:(function(d){a="&lt;a onclick=parentNode.parentNode.removeChild(parentNode)>CLOSE&lt;/a>&lt;br>";for(i=0x1f1e6;i<0x1F6FF;i++)if(i<0x1F200||i>0x1F2FF)a+=String.fromCodePoint(i)+" ";b=document.body;b.insertAdjacentHTML("beforeEnd","&lt;div style=position:fixed;z-index:99999;top:0;left:0;width:100%;background:#def;text-align:center>"+a+"&lt;/div>");})()</pre>
+Twitter images
+<pre>javascript:(function(d){a="&lt;a onclick=parentNode.parentNode.removeChild(parentNode)>CLOSE&lt;/a>&lt;br>";for(i=0x1f1e6;i<0x1F6FF;i++)if(i<0x1F200||i>0x1F2FF)a+="&lt;img src=//twemoji.maxcdn.com/72x72/"+i.toString(16)+".png alt="+String.fromCodePoint(i)+" width=20> ";b=document.body;b.insertAdjacentHTML("beforeEnd","&lt;div style=position:fixed;z-index:99999;top:0;left:0;width:100%;background:#def;text-align:center>"+a+"&lt;/div>");})()</pre>
+<a id=emojiBM href='javascript:(function(d){a="&lt;a onclick=parentNode.parentNode.removeChild(parentNode)>CLOSE&lt;/a>&lt;br>";for(i=0x1f1e6;i<0x1F6FF;i++)if(i<0x1F200||i>0x1F2FF)a+=String.fromCodePoint(i)+" ";b=document.body;b.insertAdjacentHTML("beforeEnd","&lt;div style=position:fixed;z-index:99999;top:0;left:0;width:100%;background:#def;text-align:center>"+a+"&lt;/div>");})()'>Emoji</a> or <a id=emojiBM href='javascript:(function(d){a="&lt;a onclick=parentNode.parentNode.removeChild(parentNode)>CLOSE&lt;/a>&lt;br>";for(i=0x1f1e6;i<0x1F6FF;i++)if(i<0x1F200||i>0x1F2FF)a+="&lt;img src=//twemoji.maxcdn.com/72x72/"+i.toString(16)+".png alt="+String.fromCodePoint(i)+" width=20> ";b=document.body;b.insertAdjacentHTML("beforeEnd","&lt;div style=position:fixed;z-index:99999;top:0;left:0;width:100%;background:#def;text-align:center>"+a+"&lt;/div>");})()'>Twitter's emoji</a> (Drag to your bookmarks)
+ => <input placeholder=demo>
