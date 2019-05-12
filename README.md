@@ -7,4 +7,4 @@ http://xem.github.io/miniBookmarklet
 
 
 BONUS: golfed bookmarklets for email pasting and emoji keyboard
-http://xem.github.io/miniBookmarklet/miniBookmarkmets
+http://xem.github.io/miniBookmarklet/miniBookmarklets
